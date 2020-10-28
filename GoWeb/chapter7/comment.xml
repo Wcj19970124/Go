@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blog id="1">
+    <content>我是文章内容</content>
+    <writer id="2">wcj</writer>
+    <comments>
+        <comment id="1">
+            <content>内容真棒</content>
+            <writer id="3">hhy</writer>
+        </comment>
+        <comment id="2">
+            <content>支持支持！</content>
+            <writer id="4">ysj</writer>
+        </comment>
+    </comments>
+</blog>
