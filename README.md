@@ -11,4 +11,7 @@
                 Ⅲ、模板引擎：主要是标准库中的text/template,html/template <br/>
                 Ⅳ、数据存储：主要分为内存存储、文件存储(csv,gob),数据库存储(net/sql)<br>
                 Ⅴ、Go web的基本工具：xml和json的编码和解码(encoding/xml,encoding/json),这里写了一个小的Go web服务,学生信息管理的Demo，涉及到前面所学习的知识的80%<br>
+                Ⅵ、Go的测试相关：单元测试，基准测试，其它 <br/>
+                Ⅶ、并发和并行方面的知识  <br/>
+             
                 
