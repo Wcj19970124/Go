@@ -1,0 +1,20 @@
+{
+    "id":1,
+    "name":"莉莉娅",
+    "creator":{
+        "id":1,
+        "name":"Tom"
+    },
+    "comments":[
+        {
+            "id":1,
+            "content":"这个英雄很棒",
+            "user":"wcj"
+        },
+        {
+            "id":2,
+            "content":"楼上说的对",
+            "user":"hhy"
+        }
+    ]
+}

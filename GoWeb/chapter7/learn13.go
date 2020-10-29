@@ -23,7 +23,7 @@ type Pet struct {
 	Age  string `xml:"age"`
 }
 
-func main() {
+func learn13() {
 	// marshalXML()
 	encodeXML()
 }
