@@ -15,6 +15,6 @@
                 Ⅵ、Go的测试相关：单元测试，基准测试，其它 <br/>
                 Ⅶ、并发和并行方面的知识,包括goroutine,channel  <br/>
 ### Go Source Code
-   概述：主要是阅读Golang的一些常用标准库，对常用标准库内的导出函数的使用进行剖析
-    Ⅰ、fmt：主要介绍fmt包下的常用的输入输出，包含(Scan()类型,Print()类型,Errorf()类型)
+   概述：主要是阅读Golang的一些常用标准库，对常用标准库内的导出函数的使用进行剖析 <br/>
+    Ⅰ、fmt：主要介绍fmt包下的常用的输入输出，包含(Scan()类型,Print()类型,Errorf()类型) <br/>
                 
