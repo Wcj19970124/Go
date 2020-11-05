@@ -26,6 +26,6 @@
     Ⅷ、bufio:提供缓冲式的io,主要针对io.Reader和io.Writer进行包装,获取带有缓冲的io.Reader和io.Writer，然后可以利用io.Reader将缓冲中的数据读取出来，也可以利用io.Writer将数据写入到缓冲中 <br/> 
     Ⅸ、net/http,net/url:前者主要是用于建立服务器和客户端，最主要的是注意里面的两个struct：request,response/responseWriter,前者用于对请求消息进行处理,后者用于对响应消息津行处理,除此之外,还有一些服务器的设置,监听,多路复用器分发请求,处理器,处理器函数等,见Go Web中的第二节;net/url包主要是针对url进行处理,包括对参数的转码便于安全的用于url中,解析url为一个结构体便于获取url中的详细信息,提供了url.Values{}对url中的queryString进行处理 <br/>
 
-    不常用的包:
+   不常用的包:
     Ⅰ、unsafe:主要提供一些跳过go安全类型检查的方法,主要有三个,SizeOf()获取类型所占内存的大小,Offset()获取字段的偏移量,AlignOf()获取类型在内存中的对齐方式
 
