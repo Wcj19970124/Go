@@ -26,6 +26,11 @@
     Ⅷ、bufio:提供缓冲式的io,主要针对io.Reader和io.Writer进行包装,获取带有缓冲的io.Reader和io.Writer，然后可以利用io.Reader将缓冲中的数据读取出来，也可以利用io.Writer将数据写入到缓冲中 <br/> 
     Ⅸ、net/http,net/url:前者主要是用于建立服务器和客户端，最主要的是注意里面的两个struct：request,response/responseWriter,前者用于对请求消息进行处理,后者用于对响应消息津行处理,除此之外,还有一些服务器的设置,监听,多路复用器分发请求,处理器,处理器函数等,见Go Web中的第二节;net/url包主要是针对url进行处理,包括对参数的转码便于安全的用于url中,解析url为一个结构体便于获取url中的详细信息,提供了url.Values{}对url中的queryString进行处理 <br/>
     Ⅹ、math:提供一些基本的数学操作,例如两者的最大值,最小值,取余,绝对值,二次方根，三次方根等等,还有一些对复数，大数的操作，这一部分可以自行看一下标准库的中文文档。另外math包中还提供的有一个随机数的包rand <br/>
+    XI、encoding/json：主要提供对于json数据的解码和编码操作，其中最重要的为四个方法：<br/>
+        Unmarshal():解码方法，该方法多用于数据量较少,且数据类型为[]byte的时候，但是该方法有一个缺陷就是会将数字类型全部转换为float64类型 <br/>
+        Marshal()MarshalIndent():编码方法，通常我们用bytes.Buffer作为io.Writer,之后我们再通过buf.Bytes获取编码到的json字符串 <br/>
+        Decode():适用于大数据量，并且提供了Usenumber()方法，该方法可以确保数字都能转换为想要的类型，接收的是流数据 <br/>
+        Encode():适用于大数据量的编码操作
 
    不常用的包: <br/>
     Ⅰ、unsafe:主要提供一些跳过go安全类型检查的方法,主要有三个,SizeOf()获取类型所占内存的大小,Offset()获取字段的偏移量,AlignOf()获取类型在内存中的对齐方式 <br/>
@@ -44,6 +49,7 @@
     Ⅵ、container：主要提供一些不是很常用的容器，go中只提供了堆，双向链表，环形链表，总体来说比较简单，看一下就可以了 <br/>
     Ⅶ、crypto/md5:提供md5加密算法的操作
         crypto/rand:提供加解密使用的安全随机数操作，与math/rand包不同，后者提供伪随机数，常用于验证码，随机数等
+    Ⅷ、flag：主要提供对于命令行参数的操作，实际上就是操作os.Args命令行参数
 
    基本不使用的包:<br/>
     Ⅰ、database:开发中来说，这个包的内容基本不会涉及，因为一般都会使用公司内部封装好的orm，这里先不做介绍，之后有时间会进行具体的补充，也可以参考GoWeb里面的内容，涉及到database数据库的连接，连接池的获取等操作 <br/>
