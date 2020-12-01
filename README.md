@@ -31,6 +31,7 @@
         Marshal()MarshalIndent():编码方法，通常我们用bytes.Buffer作为io.Writer,之后我们再通过buf.Bytes获取编码到的json字符串 <br/>
         Decode():适用于大数据量，并且提供了Usenumber()方法，该方法可以确保数字都能转换为想要的类型，接收的是流数据 <br/>
         Encode():适用于大数据量的编码操作
+    XII、sort：内部提供了针对int,string,float64这几种切片的排序方法，如果想要实现自定义的排序方法，需要响应的类型实现该包中的sort.interface{}接口，然后方可调用Sort()方法进行排序，其排序方法，实际上是调用一次Len()方法获取data的长度，然后调用O(n*log(n)次的Swap()和Less()方法对其进行排序 <br/>
 
    不常用的包: <br/>
     Ⅰ、unsafe:主要提供一些跳过go安全类型检查的方法,主要有三个,SizeOf()获取类型所占内存的大小,Offset()获取字段的偏移量,AlignOf()获取类型在内存中的对齐方式 <br/>
