@@ -51,6 +51,7 @@ var plants = []plant{
 }
 
 //针对一个结构体切片按照结构体的不同字段进行排序
+//实际上这里就是另外写了排序方法
 func main() {
 
 	name := func(p1, p2 plant) bool {
