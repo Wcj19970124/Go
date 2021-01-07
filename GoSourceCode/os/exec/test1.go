@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os/exec"
+	"strings"
 )
 
 type person struct {
@@ -55,16 +56,40 @@ func main() {
 	// 	fmt.Println(string(data))
 	// }
 
-	cmd := exec.Command("git", "clone", "git@git.code.oa.com:IED/daojuWeex.git", "./static")
-	_, err := cmd.StdoutPipe()
-	if err != nil {
-		fmt.Println("start 执行，获取标准输出管道失败:" + err.Error())
+	params := []string{"clone", "git@git.code.oa.com:IED/daojuWeex.git", "./static/weex"}
+	// cmd := exec.Command("git", params...)
+	// // fmt.Println(cmd.Path, cmd.Args, cmd.Env, cmd.Dir)
+	// _, err := cmd.StdoutPipe()
+	// if err != nil {
+	// 	fmt.Println("start 执行，获取标准输出管道失败:" + err.Error())
+	// }
+	// if err := cmd.Start(); err != nil {
+	// 	fmt.Println("命令执行失败：" + err.Error())
+	// }
+	// if err := cmd.Wait(); err != nil {
+	// 	fmt.Println("命令执行完毕之后，关闭管道失败:" + err.Error())
+	// }
+	// fmt.Println("执行命令成功!")
+	if err := execGitClone("git", params); err != nil {
+		fmt.Println("执行命令失败:" + err.Error())
 	}
+	fmt.Println("执行命令成功")
+}
+
+//自动化执行git clone命令
+func execGitClone(commandName string, params []string) error {
+
+	cmd := exec.Command(commandName, params...)
+
+	fmt.Println(strings.Join(cmd.Args, " "))
 	if err := cmd.Start(); err != nil {
-		fmt.Println("命令执行失败：" + err.Error())
+		return err
 	}
-	if err := cmd.Wait(); err != nil {
-		fmt.Println("命令执行完毕之后，关闭管道失败:" + err.Error())
-	}
-	fmt.Println("执行命令成功!")
+
+	return nil
+}
+
+//自动化执行git pull命令
+func execGitPull(commandName string, params []string) error {
+	return nil
 }
