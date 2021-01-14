@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func learn2() {
 	p, err := os.FindProcess(31982)
 	if err != nil {
 		fmt.Println(err.Error())

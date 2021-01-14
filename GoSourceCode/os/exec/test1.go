@@ -1,4 +1,4 @@
-package main
+package exec
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ type person struct {
 	Age  int
 }
 
-func main() {
+func test1() {
 
 	// cmd := "git"                                      //命令
 	// param := "clone"                                  //命令参数
