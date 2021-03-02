@@ -5,13 +5,14 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"./util"
 )
 
 const path = "./static/src"
 
-func test() {
+func testGitWeex() {
 
 	comm := util.Command{CommandName: "git", Params: []string{"clone", "git@git.code.oa.com:IED/daojuWeex.git", "./static"}}
 
@@ -47,14 +48,14 @@ func parseWeexPro(rootDir string) (map[string]interface{}, error) {
 		}
 		if filepath.Dir(subPath) == "static\\src" { //一级目录下Weex页面获取
 			if !info.IsDir() && filepath.Ext(info.Name()) == ".vue" {
-				weex = append(weex, info.Name())
+				weex = append(weex, strings.Replace(subPath, "\\", "/", -1))
 			}
 		} else {
 			if !info.IsDir() && filepath.Ext(info.Name()) == ".vue" {
-				component = append(component, info.Name())
+				component = append(component, strings.Replace(subPath, "\\", "/", -1))
 			}
 			if !info.IsDir() && filepath.Ext(info.Name()) == ".js" {
-				js = append(js, info.Name())
+				js = append(js, strings.Replace(subPath, "\\", "/", -1))
 			}
 		}
 		return nil

@@ -4,12 +4,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"path/filepath"
 	"regexp"
-	"strings"
 )
 
-const testPath = "./static/src/activity_listview.vue"
+const testPath = "./static/src/dynamic_detail.vue"
 
 func main() {
 
@@ -25,7 +23,7 @@ func main() {
 		fmt.Println("文件读取失败:" + err.Error())
 	}
 
-	reg := regexp.MustCompile("require\\('.*'\\)")
+	reg := regexp.MustCompile("(?:require\\(('|\"))(.*)(?:('|\")\\))")
 	if reg.MatchString(string(data)) {
 		fmt.Println("匹配成功")
 	} else {
@@ -33,14 +31,5 @@ func main() {
 	}
 
 	slice := reg.FindAllString(string(data), -1)
-
-	res := []string{}
-	for _, v := range slice {
-		begin := strings.Index(v, "'")
-		end := strings.LastIndex(v, "'")
-
-		res = append(res, v[begin+1:end])
-	}
-
-	fmt.Println(filepath.Base(res[1]))
+	fmt.Println(slice)
 }

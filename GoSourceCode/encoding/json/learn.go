@@ -15,7 +15,7 @@ type Student struct {
 //Unmarshal()/Marshal():这种方法通常用于数据量不大，且是[]byte的情况下比较方便
 //Decode()/Encode():这种方法通常用于数据量比较大的情况，且因为其和读取文件一样
 //是创建编码器和解码器，所以对于数据形式的要求并不固定，只要能通过io.Reader/io.Writer读取和写入即可
-func main() {
+func learn() {
 
 	str := `{
 		"id":100,

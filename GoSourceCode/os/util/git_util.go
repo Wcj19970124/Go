@@ -2,6 +2,7 @@ package util
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -23,4 +24,10 @@ func ExecCommand(command Command) error {
 	}
 
 	return nil
+}
+
+//IsFileExists 校验路径文件/目录是否存在
+func IsFileExists(path string) bool {
+	_, err := os.Stat(path)
+	return err == nil || os.IsExist(err)
 }
